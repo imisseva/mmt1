@@ -1,0 +1,74 @@
+### Test User Management ###
+
+# Create a new user
+POST http://localhost:5000/api/user
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "password": "password123",
+    "fullName": "Test User",
+    "email": "test@example.com",
+    "role": "Member"
+}
+
+### Get all users
+GET http://localhost:5000/api/user
+
+### Get user by ID (replace {id} with actual user ID)
+GET http://localhost:5000/api/user/1
+
+### Update user (replace {id} with actual user ID)
+PUT http://localhost:5000/api/user/1
+Content-Type: application/json
+
+{
+    "fullName": "Updated Test User",
+    "email": "updated@example.com",
+    "password": "newpassword123"
+}
+
+### Update user status (replace {id} with actual user ID)
+PUT http://localhost:5000/api/user/1/status
+Content-Type: application/json
+
+{
+    "status": "Active"
+}
+
+### Test Book Borrowing ###
+
+# Borrow a book
+POST http://localhost:5000/api/borrowings
+Content-Type: application/json
+
+{
+    "userId": 1,
+    "bookId": 1
+}
+
+### Get all borrowings
+GET http://localhost:5000/api/borrowings
+
+### Get borrowings by user ID
+GET http://localhost:5000/api/borrowings/user/1
+
+### Get borrowing by ID (replace {id} with actual borrowing ID)
+GET http://localhost:5000/api/borrowings/1
+
+### Return a book (replace {id} with actual borrowing ID)
+PUT http://localhost:5000/api/borrowings/1/return
+
+### Get overdue borrowings
+GET http://localhost:5000/api/borrowings/overdue
+
+### Test Authentication ###
+
+# Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "password": "password123"
+} 
