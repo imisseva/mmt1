@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "",
+"RedirectUrl": "",
+"LaunchCommand": "",
+"WorkingDirectory": "D:\\mmt\\qltv\\clientapp\\",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
